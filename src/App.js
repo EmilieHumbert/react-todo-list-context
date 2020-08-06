@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { ListProvider } from "./ListContext";
 
 import ListTodos from "./Components/ListTodos";
+import AddTodoForm from "./Components/AddTodoForm";
 
 const initialList = [
   {
@@ -17,6 +18,7 @@ function App() {
   return (
     <ListProvider value={listState}>
       <ListTodos />
+      <AddTodoForm />
     </ListProvider>
   );
 }
