@@ -1,11 +1,12 @@
 import React from "react";
 
 import DeleteButton from "./DeleteButton";
+import Checkbox from "./Checkbox";
 
-const Todo = ({ todo, handleDelete }) => {
+const Todo = ({ todo, handleDelete, handleCheck }) => {
   return (
     <li>
-      <input type="checkbox" />
+      <Checkbox todo={todo} handleCheck={handleCheck} />
       {todo.text}
       <DeleteButton handleDelete={handleDelete} />
     </li>

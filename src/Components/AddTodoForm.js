@@ -1,5 +1,7 @@
 import React, { useContext, useState } from "react";
+
 import ListContext from "../ListContext";
+import Checkbox from "./Checkbox"
 
 const AddTodoForm = () => {
   const [list, setList] = useContext(ListContext);
@@ -18,7 +20,7 @@ const AddTodoForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="checkbox" disabled />
+      <Checkbox />
       <input
         placeholder="Add a todo"
         value={input}

@@ -10,6 +10,12 @@ const ListTodos = () => {
     setList(list.filter((listTodo) => listTodo !== todo));
   };
 
+  const handleCheck = (todo) => {
+    const checkUpdate = { ...todo, completed: !todo.completed };
+    setList(list.map((listTodo) => ((listTodo === todo) ? checkUpdate : listTodo)));
+    console.log(todo);
+  };
+
   return (
     <ul>
       {list.map((todo) => (
@@ -17,6 +23,7 @@ const ListTodos = () => {
           key={todo.id}
           todo={todo}
           handleDelete={() => handleDelete(todo)}
+          handleCheck={() => handleCheck(todo)}
         />
       ))}
     </ul>
