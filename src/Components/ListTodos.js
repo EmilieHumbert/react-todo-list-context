@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import ListContext from "../ListContext";
 
+import ListContext from "../ListContext";
 import Todo from "./Todo";
 
 const ListTodos = () => {
@@ -13,7 +13,6 @@ const ListTodos = () => {
   const handleCheck = (todo) => {
     const checkUpdate = { ...todo, completed: !todo.completed };
     setList(list.map((listTodo) => ((listTodo === todo) ? checkUpdate : listTodo)));
-    console.log(todo);
   };
 
   return (
