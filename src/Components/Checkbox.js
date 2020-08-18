@@ -1,11 +1,9 @@
 import React from "react";
+import { Checkbox as CheckboxAnt } from "antd";
 
-const Checkbox = ({ todo, handleCheck }) => {
+const Checkbox = ({ disabled, todo, handleCheck }) => {
   return (
-    <input
-      type="checkbox"
-      onChange={(todo) => handleCheck(todo)}
-    />
+    <CheckboxAnt disabled={disabled} onChange={(todo) => handleCheck(todo)} />
   );
 };
 
