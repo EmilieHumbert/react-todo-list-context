@@ -7,8 +7,8 @@ import {
 } from "@ant-design/icons";
 
 import ListContext from "../ListContext";
-import DeleteButton from "./DeleteButton";
-import Checkbox from "./Checkbox";
+import TodoDeleteButton from "./TodoDeleteButton";
+import TodoCompleteCheckbox from "./TodoCompleteCheckbox";
 
 const Todo = ({ todo, handleDelete, handleCheck }) => {
   const [input, setInput] = useState(todo.text);
@@ -47,7 +47,7 @@ const Todo = ({ todo, handleDelete, handleCheck }) => {
     <List.Item>
       <Row align="middle" gutter={8} style={{ flexGrow: 1 }}>
         <Col flex="0 0 auto">
-          <Checkbox todo={todo} handleCheck={handleCheck} />
+          <TodoCompleteCheckbox todo={todo} handleCheck={handleCheck} />
         </Col>
         <Col flex="1 0 auto">
           {updateTodo ? (
@@ -77,7 +77,7 @@ const Todo = ({ todo, handleDelete, handleCheck }) => {
               onClick={handleCancelClick}
             />
           ) : (
-            <DeleteButton handleDelete={handleDelete} />
+            <TodoDeleteButton todo={todo} handleDelete={handleDelete} />
           )}
         </Col>
       </Row>

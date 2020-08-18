@@ -3,7 +3,7 @@ import { Button, Col, Form, Input, Row } from "antd";
 import { PlusCircleTwoTone } from "@ant-design/icons";
 
 import ListContext from "../ListContext";
-import Checkbox from "./Checkbox";
+import TodoCompleteCheckbox from "./TodoCompleteCheckbox";
 
 const AddTodoForm = () => {
   const [list, setList] = useContext(ListContext);
@@ -23,7 +23,7 @@ const AddTodoForm = () => {
     <Form form={form} onFinish={handleSubmit}>
       <Row align="middle" gutter={8} style={{ flexGrow: 1, padding: "12px 0" }}>
         <Col flex="0 0 auto">
-          <Checkbox disabled />
+          <TodoCompleteCheckbox disabled />
         </Col>
         <Col flex="1 0 auto">
           <Form.Item name="text" style={{ marginBottom: 0 }}>
