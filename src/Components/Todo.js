@@ -44,53 +44,44 @@ const Todo = ({ todo, handleDelete, handleCheck }) => {
   };
 
   return (
-    <>
-      {updateTodo ? (
-        <List.Item>
-          <Row align="middle" gutter={8} style={{ flexGrow: 1 }}>
-            <Col flex="0 0 auto">
-              <Checkbox todo={todo} handleCheck={handleCheck} />
-            </Col>
-            <Col flex="1 0 auto">
-              <Input value={input} onChange={handleEditChange} />
-            </Col>
-            <Col flex="0 0 auto">
-              <Button
-                icon={<CheckCircleTwoTone twoToneColor="#7FFF00" />}
-                onClick={handleSaveClick}
-              />
-            </Col>
-            <Col flex="0 0 auto">
-              <Button
-                icon={<CloseCircleTwoTone twoToneColor="red" />}
-                onClick={handleCancelClick}
-              />
-            </Col>
-          </Row>
-        </List.Item>
-      ) : (
-        <List.Item>
-          <Row align="middle" gutter={8} style={{ flexGrow: 1 }}>
-            <Col flex="0 0 auto">
-              <Checkbox todo={todo} handleCheck={handleCheck} />
-            </Col>
-            <Col flex="1 0 auto">
-              <div style={{ padding: "5px 12px" }}>{input}</div>
-            </Col>
-            <Col flex="0 0 auto">
-              <DeleteButton handleDelete={handleDelete} />
-            </Col>
-            <Col flex="0 0 auto">
-              <Button
-                icon={<EditTwoTone />}
-                onClick={handleEditClick}
-                type="submit"
-              />
-            </Col>
-          </Row>
-        </List.Item>
-      )}
-    </>
+    <List.Item>
+      <Row align="middle" gutter={8} style={{ flexGrow: 1 }}>
+        <Col flex="0 0 auto">
+          <Checkbox todo={todo} handleCheck={handleCheck} />
+        </Col>
+        <Col flex="1 0 auto">
+          {updateTodo ? (
+            <Input value={input} onChange={handleEditChange} />
+          ) : (
+            <div style={{ padding: "5px 12px" }}>{input}</div>
+          )}
+        </Col>
+        <Col flex="0 0 auto">
+          {updateTodo ? (
+            <Button
+              icon={<CheckCircleTwoTone twoToneColor="#7FFF00" />}
+              onClick={handleSaveClick}
+            />
+          ) : (
+            <Button
+              icon={<EditTwoTone />}
+              onClick={handleEditClick}
+              type="submit"
+            />
+          )}
+        </Col>
+        <Col flex="0 0 auto">
+          {updateTodo ? (
+            <Button
+              icon={<CloseCircleTwoTone twoToneColor="red" />}
+              onClick={handleCancelClick}
+            />
+          ) : (
+            <DeleteButton handleDelete={handleDelete} />
+          )}
+        </Col>
+      </Row>
+    </List.Item>
   );
 };
 
